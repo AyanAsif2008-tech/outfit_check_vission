@@ -10,11 +10,25 @@ const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         className="w-full max-w-5xl bg-white/[0.03] backdrop-blur-2xl border border-white/10 rounded-[2.5rem] py-4 px-10 flex justify-between items-center shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
       >
-        {/* Logo with Glow */}
-        <div className="text-2xl font-black italic tracking-tighter flex items-center gap-2">
-          <div className="w-8 h-8 bg-indigo-600 rounded-lg rotate-12 flex items-center justify-center text-xs not-italic shadow-[0_0_20px_rgba(79,70,229,0.6)]">O</div>
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">OUTFITCHECK</span>
-        </div>
+        {/* Logo Section */}
+        <NavLink to="/" className="flex items-center gap-3 group">
+          <div className="relative w-12 h-12 flex items-center justify-center">
+            {/* Logo Image with Theme Filter */}
+            <img 
+              src="/public/logo.png" // Apne logo ka sahi path yahan dalein
+              alt="Outfit Check Logo" 
+              className="w-full h-full object-contain brightness-0 invert-[0.9] sepia-[1] saturate-[5] hue-rotate-[200deg] drop-shadow-[0_0_8px_rgba(79,70,229,0.5)]"
+            />
+          </div>
+          <div className="flex flex-col leading-none">
+            <span className="text-xl font-black italic tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-indigo-400">
+              OUTFITCHECK
+            </span>
+            <span className="text-[8px] uppercase tracking-[0.2em] text-gray-500 font-bold group-hover:text-indigo-300 transition-colors">
+              Your Style Assistant
+            </span>
+          </div>
+        </NavLink>
 
         {/* Links */}
         <div className="hidden md:flex items-center gap-12 font-bold text-[10px] uppercase tracking-[0.3em]">

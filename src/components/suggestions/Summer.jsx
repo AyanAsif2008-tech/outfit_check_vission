@@ -8,63 +8,63 @@ const Summer = () => {
       title: 'Linen Armor', 
       desc: 'Breathable, lightweight, and actually makes you look like you own a yacht.', 
       tag: 'Upper',
-      img: '../public/summer1.jpg' 
+      img: '../summer1.jpg' 
     },
     { 
       id: 'S-02', 
       title: 'Cuban Cut', 
       desc: 'Open collar for airflow. If it’s not patterned, don’t even bother.', 
       tag: 'Torso',
-      img: '../public/summer2.jpg'
+      img: '../summer2.jpg'
     },
     { 
       id: 'S-03', 
       title: 'Technical Shorts', 
       desc: 'Above the knee or nothing. Stop wearing cargo pants in 40°C.', 
       tag: 'Lower',
-      img: '../public/summer3.png'
+      img: '../summer3.png'
     },
     { 
       id: 'S-04', 
       title: 'Solar Shades', 
       desc: 'UV protection with a sharp edge. Hide your tired eyes from the sun.', 
       tag: 'Accessory',
-      img: '../public/summer4.png'
+      img: '../summer4.png'
     },
     { 
       id: 'S-05', 
       title: 'Canvas Kicks', 
       desc: 'Ditch the heavy leather. Your feet need to breathe, not suffocate.', 
       tag: 'Footwear',
-      img: '../public/summer5.jpg'
+      img: '../summer5.jpg'
     },
     { 
       id: 'S-06', 
       title: 'Pastel Matrix', 
       desc: 'Wash out the dark tones. High-noon sun demands lighter frequencies.', 
       tag: 'Tone',
-      img: 'http://googleusercontent.com/image_collection/image_retrieval/17856166038789720315_5'
+      img: '../summer6.png'
     },
     { 
       id: 'S-07', 
       title: 'Silk Flow', 
       desc: 'Luxury friction-less fabric. Expensive, but so is your reputation.', 
       tag: 'Premium',
-      img: 'http://googleusercontent.com/image_collection/image_retrieval/17856166038789720315_6'
+      img: '../summer7.png'
     },
     { 
       id: 'S-08', 
       title: 'Hydro Mesh', 
       desc: 'Athletic tech for the humidity. Stay dry while everyone else melts.', 
       tag: 'Utility',
-      img: 'http://googleusercontent.com/image_collection/image_retrieval/17856166038789720315_7'
+      img: '../summer8.png'
     },
     { 
       id: 'S-09', 
       title: 'Sandals Protocol', 
       desc: 'No socks. Ever. Unless you want a permanent ban from fashion.', 
       tag: 'Warning',
-      img: 'http://googleusercontent.com/image_collection/image_retrieval/17856166038789720315_8'
+      img: '../summer9.jpg'
     },
   ];
 

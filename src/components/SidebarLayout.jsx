@@ -1,3 +1,4 @@
+// src/components/SidebarLayout.jsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -7,7 +8,6 @@ const SidebarLayout = ({ children }) => {
   const location = useLocation();
   const [user, setUser] = useState({ name: 'Guest', initial: 'G' });
   
-  // Suggestions menu ko open/close karne ke liye state
   const [isSuggestionsOpen, setIsSuggestionsOpen] = useState(location.pathname.includes('/suggestions'));
 
   useEffect(() => {
@@ -47,7 +47,6 @@ const SidebarLayout = ({ children }) => {
     },
   ];
 
-  // Naye Seasonal Items
   const seasonalItems = [
     { name: 'Summer Edit', path: '/suggestions/summer', color: 'text-orange-500' },
     { name: 'Winter Protocol', path: '/suggestions/winter', color: 'text-blue-400' },
@@ -60,20 +59,24 @@ const SidebarLayout = ({ children }) => {
       
       <aside className="w-80 bg-[#080808]/80 backdrop-blur-2xl border-r border-white/5 fixed h-full z-50 flex flex-col shadow-2xl overflow-y-auto custom-scrollbar">
         
-        {/* Brand Identity */}
+        {/* Updated Brand Identity with logo.png */}
         <div className="p-10">
           <div className="flex items-center gap-4 group cursor-pointer" onClick={() => navigate('/dashboard')}>
             <div className="relative">
-              <div className="absolute -inset-2 bg-indigo-600 rounded-lg blur opacity-20 group-hover:opacity-50 transition duration-500" />
-              <div className="relative w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg transform group-hover:rotate-12 transition-transform">
-                <span className="font-black text-sm italic">OC</span>
-              </div>
+              <div className="absolute -inset-3 bg-indigo-600 rounded-full blur-xl opacity-10 group-hover:opacity-30 transition duration-500" />
+              <img 
+                src="/logo.png" 
+                alt="Logo" 
+                className="relative w-14 h-14 object-contain brightness-0 invert-[0.9] sepia-[1] saturate-[3] hue-rotate-[210deg] transform group-hover:scale-110 transition-transform duration-500"
+              />
             </div>
             <div>
-              <h1 className="text-xl font-black uppercase italic tracking-tighter leading-none">
-                Outfit<span className="text-indigo-500">Check</span>
-              </h1>
-              <p className="text-[8px] font-bold text-gray-600 tracking-[0.4em] uppercase mt-1">Protocol v1.0</p>
+              <span className="text-xl font-black italic tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-indigo-400">
+              OUTFITCHECK
+            </span><br />
+            <span className="text-[8px] uppercase tracking-[0.2em] text-gray-500 font-bold group-hover:text-indigo-300 transition-colors">
+            Your Style Assistant
+            </span>
             </div>
           </div>
         </div>
@@ -105,7 +108,6 @@ const SidebarLayout = ({ children }) => {
             );
           })}
 
-          {/* --- SYSTEM SUGGESTIONS (DROPDOWN) --- */}
           <div className="pt-4">
             <button 
               onClick={() => setIsSuggestionsOpen(!isSuggestionsOpen)}
