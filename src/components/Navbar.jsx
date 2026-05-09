@@ -15,7 +15,7 @@ const Navbar = () => {
           <div className="relative w-12 h-12 flex items-center justify-center">
             {/* Logo Image with Theme Filter */}
             <img 
-              src="/public/logo.png" // Apne logo ka sahi path yahan dalein
+              src="../logo.png" // Apne logo ka sahi path yahan dalein
               alt="Outfit Check Logo" 
               className="w-full h-full object-contain brightness-0 invert-[0.9] sepia-[1] saturate-[5] hue-rotate-[200deg] drop-shadow-[0_0_8px_rgba(79,70,229,0.5)]"
             />

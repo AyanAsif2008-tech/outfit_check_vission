@@ -65,7 +65,7 @@ const SidebarLayout = ({ children }) => {
             <div className="relative">
               <div className="absolute -inset-3 bg-indigo-600 rounded-full blur-xl opacity-10 group-hover:opacity-30 transition duration-500" />
               <img 
-                src="/logo.png" 
+                src="../logo.png" 
                 alt="Logo" 
                 className="relative w-14 h-14 object-contain brightness-0 invert-[0.9] sepia-[1] saturate-[3] hue-rotate-[210deg] transform group-hover:scale-110 transition-transform duration-500"
               />
