@@ -9,7 +9,7 @@ import SignUp from './pages/SignUp';
 import Analysis from './pages/Analysis';
 import Dashboard from './pages/Dashboard';
 import SidebarLayout from './components/SidebarLayout';
-import Archives from './pages/Archives';
+
 
 // --- UPDATED IMPORTS (Components folder se) ---
 import Summer from './components/suggestions/Summer';
@@ -44,7 +44,7 @@ const AppContent = () => {
 
           <Route path="/dashboard" element={<SidebarLayout><Dashboard /></SidebarLayout>} />
           <Route path="/analysis" element={<SidebarLayout><Analysis /></SidebarLayout>} />
-          <Route path="/archives" element={<SidebarLayout><Archives /></SidebarLayout>} />
+      
 
           {/* --- ROUTES CONNECTED TO YOUR COMPONENTS --- */}
           <Route path="/suggestions/summer" element={<SidebarLayout><Summer /></SidebarLayout>} />

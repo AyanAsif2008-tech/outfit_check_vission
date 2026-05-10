@@ -6,13 +6,11 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("User");
 
-  // --- Initialize Session Data ---
   useEffect(() => {
     const storedName = localStorage.getItem('userName');
     if (storedName) setUserName(storedName);
   }, []);
 
-  // --- Animation Variants ---
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
@@ -41,10 +39,10 @@ const Dashboard = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-[1400px] mx-auto px-6 md:px-12 pt-28 pb-12 relative z-10"
+        className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 pt-16 md:pt-28 pb-12 relative z-10"
       >
         {/* Dynamic Header Section */}
-        <header className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
+        <header className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-8">
           <motion.div variants={itemVariants} className="space-y-4">
             <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
               <span className="relative flex h-2 w-2">
@@ -53,39 +51,39 @@ const Dashboard = () => {
               </span>
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">System Online // v2.0.4</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.9]">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] md:leading-[0.9]">
               Lab <span className="text-gray-500 font-light italic">Dashboard</span>
             </h1>
           </motion.div>
         </header>
 
         {/* Dashboard Grid Architecture */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
           
           {/* Main Module: AI Scanner */}
           <motion.div 
             variants={itemVariants}
             onClick={() => navigate('/analysis')}
-            className="md:col-span-8 group relative h-[500px] rounded-[3.5rem] p-1 bg-gradient-to-b from-white/10 to-transparent cursor-pointer transition-all duration-500"
+            className="md:col-span-12 lg:col-span-8 group relative min-h-[400px] md:h-[500px] rounded-[2.5rem] md:rounded-[3.5rem] p-1 bg-gradient-to-b from-white/10 to-transparent cursor-pointer transition-all duration-500"
           >
-            <div className="relative h-full w-full bg-[#080808] rounded-[3.4rem] overflow-hidden p-12 flex flex-col justify-between border border-white/5 shadow-2xl">
+            <div className="relative h-full w-full bg-[#080808] rounded-[2.4rem] md:rounded-[3.4rem] overflow-hidden p-8 md:p-12 flex flex-col justify-between border border-white/5 shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               
-              <div className="relative z-10 flex flex-col items-start gap-8">
-                <div className="w-20 h-20 bg-white text-black rounded-[2rem] flex items-center justify-center shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-all duration-700 group-hover:scale-110 group-hover:rotate-6">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 5v14M5 12h14"/></svg>
+              <div className="relative z-10 flex flex-col items-start gap-6 md:gap-8">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-white text-black rounded-2xl md:rounded-[2rem] flex items-center justify-center shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-all duration-700 group-hover:scale-110 group-hover:rotate-6">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 5v14M5 12h14"/></svg>
                 </div>
                 <div className="space-y-4">
-                  <h2 className="text-5xl md:text-6xl font-bold tracking-tighter italic uppercase">
+                  <h2 className="text-4xl md:text-6xl font-bold tracking-tighter italic uppercase leading-none">
                     Initialize <br/><span className="text-indigo-500 not-italic">Neural Fit-Scan</span>
                   </h2>
-                  <p className="text-gray-400 max-w-sm text-lg font-medium leading-relaxed">
+                  <p className="text-gray-400 max-w-sm text-base md:text-lg font-medium leading-relaxed">
                     Deploy AI vision to analyze silhouette architecture and color theory.
                   </p>
                 </div>
               </div>
 
-              <div className="relative z-10 flex items-center gap-4">
+              <div className="relative z-10 flex flex-wrap items-center gap-4 mt-8 md:mt-0">
                 <div className="px-5 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-[0.3em] group-hover:bg-white group-hover:text-black transition-all duration-500">
                   Execute Protocol
                 </div>
@@ -93,21 +91,21 @@ const Dashboard = () => {
               </div>
 
               {/* Decorative Background Elements */}
-              <div className="absolute -bottom-20 -right-20 w-80 h-80 border border-white/5 rounded-full" />
-              <div className="absolute -bottom-10 -right-10 w-60 h-60 border border-white/5 rounded-full" />
+              <div className="absolute -bottom-20 -right-20 w-40 md:w-80 h-40 md:h-80 border border-white/5 rounded-full" />
+              <div className="absolute -bottom-10 -right-10 w-30 md:w-60 h-30 md:h-60 border border-white/5 rounded-full" />
             </div>
           </motion.div>
 
           {/* Side Modules: Data & Experience */}
-          <motion.div variants={itemVariants} className="md:col-span-4 flex flex-col gap-8">
+          <motion.div variants={itemVariants} className="md:col-span-12 lg:col-span-4 flex flex-col gap-6 md:gap-8">
             {/* Rank Card */}
-            <div className="flex-1 p-10 bg-[#0a0a0a] border border-white/5 rounded-[3.5rem] flex flex-col justify-between relative overflow-hidden group">
+            <div className="flex-1 p-8 md:p-10 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] md:rounded-[3.5rem] flex flex-col justify-between relative overflow-hidden group min-h-[200px]">
               <div className="absolute top-0 right-0 p-8 text-indigo-500/20 group-hover:text-indigo-500/40 transition-colors">
-                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M12 2v20M2 12h20"/></svg>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M12 2v20M2 12h20"/></svg>
               </div>
               <p className="text-[10px] font-black text-gray-500 uppercase tracking-[0.3em]">Global Influence</p>
               <div>
-                <h3 className="text-8xl font-black tracking-tighter italic text-white/90">#249</h3>
+                <h3 className="text-6xl md:text-8xl font-black tracking-tighter italic text-white/90">#249</h3>
                 <div className="flex items-center gap-2 mt-4 text-emerald-400 font-bold text-xs">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M18 15l-6-6-6 6"/></svg>
                   <span>TOP 2.4% THIS WEEK</span>
@@ -116,9 +114,9 @@ const Dashboard = () => {
             </div>
 
             {/* Experience Card */}
-            <div className="p-10 bg-indigo-600 rounded-[3.5rem] text-white shadow-[0_0_60px_rgba(79,70,229,0.2)]">
+            <div className="p-8 md:p-10 bg-indigo-600 rounded-[2.5rem] md:rounded-[3.5rem] text-white shadow-[0_0_60px_rgba(79,70,229,0.2)]">
                <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-4 opacity-70">Experience Level</p>
-               <h4 className="text-3xl font-bold mb-6 italic">Tier_02 Master</h4>
+               <h4 className="text-2xl md:text-3xl font-bold mb-6 italic">Tier_02 Master</h4>
                <div className="space-y-3">
                   <div className="flex justify-between text-[10px] font-black uppercase tracking-widest">
                     <span>Progress</span>
@@ -132,7 +130,7 @@ const Dashboard = () => {
           </motion.div>
 
           {/* Footer Modules: Feed & Engine */}
-          <motion.div variants={itemVariants} className="md:col-span-4 p-10 bg-[#0a0a0a] border border-white/5 rounded-[3.5rem]">
+          <motion.div variants={itemVariants} className="md:col-span-12 lg:col-span-4 p-8 md:p-10 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] md:rounded-[3.5rem]">
             <p className="text-[10px] font-black text-gray-500 uppercase tracking-[0.3em] mb-8">Live Neural Feed</p>
             <div className="space-y-6">
               {['Aesthetic_V3', 'Silhouete_Scan', 'Palette_Sync'].map((item, idx) => (
@@ -145,22 +143,22 @@ const Dashboard = () => {
             </div>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="md:col-span-8 p-10 bg-[#0a0a0a] border border-white/5 rounded-[3.5rem] flex items-center justify-between overflow-hidden relative">
-             <div className="absolute right-[-5%] top-[-10%] opacity-5">
-               <svg width="400" height="400" viewBox="0 0 24 24" fill="white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <motion.div variants={itemVariants} className="md:col-span-12 lg:col-span-8 p-8 md:p-10 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] md:rounded-[3.5rem] flex flex-col sm:flex-row items-start sm:items-center justify-between overflow-hidden relative gap-8">
+             <div className="absolute right-[-5%] top-[-10%] opacity-5 hidden sm:block">
+               <svg width="300" height="300" viewBox="0 0 24 24" fill="white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
              </div>
              <div className="relative z-10 space-y-2">
-               <h4 className="text-3xl font-bold tracking-tight uppercase">Accuracy Engine</h4>
+               <h4 className="text-2xl md:text-3xl font-bold tracking-tight uppercase">Accuracy Engine</h4>
                <p className="text-sm text-gray-500 font-medium italic leading-relaxed">Quantum calibration active for precise results.</p>
              </div>
-             <div className="relative z-10 flex gap-8 pr-4">
+             <div className="relative z-10 flex gap-6 md:gap-8 w-full sm:w-auto justify-between sm:justify-end pr-0 sm:pr-4">
                 <div className="text-center">
-                  <p className="text-5xl font-black italic">98<span className="text-lg text-indigo-500">%</span></p>
+                  <p className="text-4xl md:text-5xl font-black italic">98<span className="text-lg text-indigo-500">%</span></p>
                   <p className="text-[9px] font-black text-gray-600 uppercase tracking-widest mt-2">Precision</p>
                 </div>
-                <div className="w-[1px] h-16 bg-white/5" />
+                <div className="w-[1px] h-12 md:h-16 bg-white/5" />
                 <div className="text-center">
-                  <p className="text-5xl font-black italic">14<span className="text-lg text-indigo-500">ms</span></p>
+                  <p className="text-4xl md:text-5xl font-black italic">14<span className="text-lg text-indigo-500">ms</span></p>
                   <p className="text-[9px] font-black text-gray-600 uppercase tracking-widest mt-2">Latency</p>
                 </div>
              </div>
@@ -171,10 +169,10 @@ const Dashboard = () => {
         {/* Minimalist Page Footer */}
         <motion.footer 
           variants={itemVariants}
-          className="mt-24 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center opacity-30 text-[9px] font-mono tracking-[0.4em] uppercase"
+          className="mt-16 md:mt-24 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center opacity-30 text-[9px] font-mono tracking-[0.4em] uppercase text-center md:text-left gap-6"
         >
           <p>© 2026 StyleLab Neural Network // Core_Module_Init</p>
-          <div className="flex gap-12 mt-6 md:mt-0">
+          <div className="flex gap-8 md:gap-12">
             <span className="hover:text-indigo-500 cursor-pointer transition-colors">Privacy.exe</span>
             <span className="hover:text-indigo-500 cursor-pointer transition-colors">Nodes.status</span>
           </div>
