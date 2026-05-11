@@ -82,7 +82,7 @@ const SignUp = () => {
         showConfirmButton: false,
       });
 
-      setTimeout(() => navigate('/dashboard'), 1600);
+      setTimeout(() => navigate('/signIn'), 1600);
     }, 2000);
   };
 
